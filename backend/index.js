@@ -3,9 +3,20 @@ import {PORT, mongodbURL} from './config.js';
 import mongoose from "mongoose";
 import {Book} from './Models/Bookmodel.js'
 import bookRoute from "./Routes/bookRoute.js";
+import cors from 'cors';
 const app = express();
 
 app.use(express.json());
+
+// Middleware handling CORS Policy 
+// Option 1: Allow all origins with default of cors(*)
+// app.use(cors());
+// Option 2: Allow Custom Origins 
+app.use(cors({
+    origin: 'https://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETEE'],
+    allowedHeaders: ['Content-Type']
+}))
 app.get('/', (req, res) => {
     console.log(req);
     return res.status(234).send('Welcome to BookStore in MERN Stack');
