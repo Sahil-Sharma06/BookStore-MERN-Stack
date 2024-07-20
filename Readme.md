@@ -20,7 +20,7 @@ Welcome to the MERN Bookstore App! This project is aimed at creating a web appli
 
 - **Backend**:
   - Node.js
-  - Express.js
+  - Express
   - MongoDB
 
 
